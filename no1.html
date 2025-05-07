@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Make Small Rooms Look Bigger</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <style>
+    /* Enable smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Global body styling */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    /* Header styling */
+    header {
+      
+      color: #000;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      font-family: "Ethereal","Baskerville Old Face","Baskerville",serif;
+    }
+
+    /* Navigation bar styling */
+    nav {
+      background-color: #34495e;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fca311;
+    }
+
+    /* Container for main layout */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* Tips section styling */
+    .tips-section {
+      flex: 2 1 600px;
+    }
+
+    /* Individual tip card styling */
+    .tip {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .tip:hover {
+      transform: scale(1.01);
+    }
+
+    .tip img {
+      flex: 1 1 400px;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .tip-content {
+      flex: 1 1 400px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .tip h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #34495e;
+    }
+
+    .tip p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .tip:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    /* Responsive styling for small screens */
+    @media (max-width: 768px) {
+      .tip {
+        flex-direction: column !important;
+      }
+
+      .tip img {
+        height: 220px;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+    }
+
+    /* Share your vision section */
+    .description {
+      font-size: 0.9rem;
+      color: #4F4F4F;
+    }
+
+    .share-button-container {
+      text-align: center;
+      margin: 60px 0 20px;
+    }
+
+    .share-button-description {
+        font-family: "Ethereal","Baskerville Old Face","Baskerville",serif;
+        font-size: 30px;
+        font-weight: 200;
+        line-height: 30px;
+        margin-bottom: 60px;
+    }
+
+    .share-button {
+      background-color: #123458;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 40px;
+      font-size: 1rem;
+      border: none;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .share-button:hover {
+      background-color: #0f2e4a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    footer h3 {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    footer p {
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    footer input[type="email"]::placeholder {
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Make Small Rooms Look Bigger</h1>
+  </header>
+
+  <!-- Navigation -->
+ 
+
+  <!-- Main Content Container -->
+  <div class="container">
+
+    <!-- Tips Section -->
+    <div class="tips-section">
+
+      <!-- Tip 1 -->
+      <div class="tip">
+        <img src="https://cdn.pixabay.com/photo/2021/12/25/13/08/real-estate-6893060_1280.jpg" alt="Use Mirrors">
+        <div class="tip-content">
+          <h2>1. Use Mirrors</h2>
+          <p>Mirrors reflect light and create the illusion of more space. Place a large mirror opposite a window to maximize natural light and visually expand the room.</p>
+        </div>
+      </div>
+
+      <!-- Tip 2 -->
+      <div class="tip">
+        <img src="https://images.pexels.com/photos/2029665/pexels-photo-2029665.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Light Colors">
+        <div class="tip-content">
+          <h2>2. Choose Light Colors</h2>
+          <p>Opt for soft tones like white, beige, or pale gray. These colors reflect light better than dark shades, making your room feel airy and open.</p>
+        </div>
+      </div>
+
+      <!-- Tip 3 -->
+      <div class="tip">
+        <img src="https://images.pexels.com/photos/106936/pexels-photo-106936.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Multi-functional Furniture">
+        <div class="tip-content">
+          <h2>3. Use Multi-functional Furniture</h2>
+          <p>Invest in furniture that serves more than one purpose—like a bed with storage drawers or a fold-out table. This reduces clutter and maximizes usable space.</p>
+        </div>
+      </div>
+
+      <!-- Tip 4 -->
+      <div class="tip">
+        <img src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Furniture Arrangement">
+        <div class="tip-content">
+          <h2>4. Arrange Furniture Wisely</h2>
+          <p>Keep walkways clear and avoid overfilling the room. Floating furniture a few inches away from the wall can also create a sense of space.</p>
+        </div>
+      </div>
+
+      <!-- Tip 5 -->
+      <div class="tip">
+        <img src="https://cdn.decorilla.com/images/2400/6439f248-5392-43fa-ab41-68619d334d47/Real-Interior-Design-Projects-By-Decorilla.jpg?cv=1&crop=2400%2C599%2C0%2C599" alt="Vertical Design">
+        <div class="tip-content">
+          <h2>5. Emphasize Vertical Space</h2>
+          <p>Use tall shelves, curtains hung close to the ceiling, or vertical stripes on walls to draw the eye upward, making ceilings appear higher.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+ 
+  <!-- Share Your Vision Button -->
+  <div class="share-button-container">
+    <div class="share-button-description">Thinking of a makeover? Why not a masterpiece?</div>
+    <a href="./no4.html" class="share-button">Share Your Vision</a>
+  </div>
+
+  <!-- Footer Section -->
+  <footer style="background-color: #123458;
+  color: #fff;
+  padding:
+60px 20px 30px;
+  font-size: 14px;
+  border-radius:
+58px;
+  margin-top: 15px;">
+    <div style="display: flex;
+    flex-wrap: wrap;
+    gap:
+  40px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin:
+  auto;">
+      <div>
+        <h3>ABOUT US</h3>
+        <p>The Team</p>
+        <p>Company</p>
+        <p>Reviews</p>
+        <p>Pricing</p>
+        <p>Design Careers</p>
+        <p>Press</p>
+      </div>
+      <div>
+        <h3>EXPLORE</h3>
+        <p>Style Quiz</p>
+        <p>Interior Design Blog</p>
+        <p>Sample Projects</p>
+        <p>Designer Portfolios</p>
+        <p>Virtual Interior Design</p>
+        <p>FAQ</p>
+        <p>Contact Us</p>
+        <p>Interior Design Gift Cards</p>
+      </div>
+      <div>
+        <h3>LOCATIONS</h3>
+        <p>New York</p>
+        <p>Miami</p>
+        <p>Los Angeles</p>
+        <p>Austin</p>
+        <p>Charlotte</p>
+        <p>Chicago</p>
+        <p>Seattle</p>
+        <p>See All Locations</p>
+      </div>
+      <div style="flex: 1; min-width: 250px;">
+        <h3>GET EXCLUSIVE TIPS & OFFERS</h3>
+        <input type="email" placeholder="Enter email address" style="width: 100%; padding: 10px; border-radius: 6px; border: none; margin: 10px 0;" />
+        <h3>JOIN OUR COMMUNITY</h3>
+        <div style="display: flex; gap: 15px; align-items: center; font-size: 24px;">
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #444; margin-top: 40px; padding-top: 20px; text-align: center;">
+      <p>Our Terms & Conditions | Privacy Policy | Copyright © 2025</p>
+    </div>
+  </footer>
+
+  <!-- Font Awesome for Social Icons (only needed if icons are used) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

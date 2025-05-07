@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disgine</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f3f1ec, #ffefd5);
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 50px;
+      font-family: "Ethereal","Baskerville Old Face","Baskerville",serif;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 50px auto;
+      max-width: 1000px;
+      padding: 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      gap: 30px;
+    }
+
+    .section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .text {
+      flex: 1;
+    }
+
+    .text h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .text p {
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    .image-container {
+      flex: 1;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .image-container:hover img {
+      transform: scale(1.05);
+    }
+
+
+    .description {
+      font-size: 0.9rem;
+      color: #4F4F4F;
+    }
+
+    .share-button-container {
+      text-align: center;
+      margin: 60px 0 20px;
+    }
+
+    .share-button-description {
+        font-family: "Ethereal","Baskerville Old Face","Baskerville",serif;
+        font-size: 30px;
+        font-weight: 200;
+        line-height: 30px;
+        margin-bottom: 60px;
+    }
+
+    .share-button {
+      background-color: #123458;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 40px;
+      font-size: 1rem;
+      border: none;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .share-button:hover {
+      background-color: #0f2e4a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    footer h3 {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    footer p {
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    footer input[type="email"]::placeholder {
+      color: #999;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .image-container {
+        margin-top: 20px;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <h1>Blending Minimalism & Maximalism</h1>
+
+  <div class="section">
+    <div class="text">
+      <h2>Start with a Minimalist Base</h2>
+      <p>Use neutral tones like whites and beiges. Focus on clean lines and open spaces to create a calm foundation — think of it as your visual breathing room.</p>
+    </div>
+    <div class="image-container">
+      <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Minimalist Base">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="text">
+      <h2>Layer in Maximalist Accents</h2>
+      <p>Add bold art, patterned pillows, or eclectic objects. Keep the base simple so these expressive pieces shine without overwhelming the space.</p>
+    </div>
+    <div class="image-container">
+      <img src="https://cdn.pixabay.com/photo/2014/07/31/21/41/apartment-406901_1280.jpg" alt="Maximalist Accents">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="text">
+      <h2>Play With Texture, Not Just Color</h2>
+      <p>Use materials like wood, ceramics, woven fabrics, or leather. This adds warmth and interest while keeping a clean, curated feel.</p>
+    </div>
+    <div class="image-container">
+      <img src="https://cdn.pixabay.com/photo/2017/08/27/10/16/interior-2685517_1280.jpg" alt="Texture in Design">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="text">
+      <h2>Be Intentional With Everything</h2>
+      <p>Merge the minimalist love for functionality with the maximalist passion for meaningful collections. Let each piece tell a story, but keep the clutter out.</p>
+    </div>
+    <div class="image-container">
+      <img src="https://cdn.pixabay.com/photo/2023/11/06/23/04/living-room-8370686_1280.jpg" alt="Intentional Decor">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="text">
+      <h2>Blend Architectural and Decorative Balance</h2>
+      <p>Use sleek lighting and functional furniture as your base, then layer with textures, plants, and meaningful art to bring the room to life.</p>
+    </div>
+    <div class="image-container">
+      <img src="https://cdn.pixabay.com/photo/2017/08/27/10/16/interior-2685516_1280.jpg" alt="Architectural Balance">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="text">
+      <h2>Zones Help</h2>
+      <p>Use spatial zoning to separate moods: a serene white-toned bedroom and a colorful reading nook can coexist beautifully in the same home.</p>
+    </div>
+    <div class="image-container">
+      <img src="https://cdn.pixabay.com/photo/2023/09/19/06/14/living-room-8261882_1280.jpg" alt="Room Zoning">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="text">
+      <h2>Contrast is Key</h2>
+      <p>Combine sleek forms with vibrant patterns — like a plain black couch with wild printed cushions — to create dynamic harmony.</p>
+    </div>
+    <div class="image-container">
+      <img src="https://cdn.pixabay.com/photo/2022/11/14/10/58/interior-design-7591340_1280.jpg" alt="Design Contrast">
+    </div>
+  </div>
+   <!-- Share Your Vision Button -->
+   <div class="share-button-container">
+    <div class="share-button-description">Thinking of a makeover? Why not a masterpiece?</div>
+    <a href="./no4.html" class="share-button">Share Your Vision</a>
+  </div>
+   <!-- Footer Section -->
+   <footer style="background-color: #123458;color: #fff; padding:60px 20px 30px;font-size: 14px;border-radius:58px;margin-top: 15px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; max-width: 1200px; margin: auto;">
+      <div>
+        <h3>ABOUT US</h3>
+        <p>The Team</p>
+        <p>Company</p>
+        <p>Reviews</p>
+        <p>Pricing</p>
+        <p>Design Careers</p>
+        <p>Press</p>
+      </div>
+      <div>
+        <h3>EXPLORE</h3>
+        <p>Style Quiz</p>
+        <p>Interior Design Blog</p>
+        <p>Sample Projects</p>
+        <p>Designer Portfolios</p>
+        <p>Virtual Interior Design</p>
+        <p>FAQ</p>
+        <p>Contact Us</p>
+        <p>Interior Design Gift Cards</p>
+      </div>
+      <div>
+        <h3>LOCATIONS</h3>
+        <p>New York</p>
+        <p>Miami</p>
+        <p>Los Angeles</p>
+        <p>Austin</p>
+        <p>Charlotte</p>
+        <p>Chicago</p>
+        <p>Seattle</p>
+        <p>See All Locations</p>
+      </div>
+      <div style="flex: 1; min-width: 250px;">
+        <h3>GET EXCLUSIVE TIPS & OFFERS</h3>
+        <input type="email" placeholder="Enter email address" style="width: 100%; padding: 10px; border-radius: 6px; border: none; margin: 10px 0;" />
+        <h3>JOIN OUR COMMUNITY</h3>
+        <div style="display: flex; gap: 15px; align-items: center; font-size: 24px;">
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #444; margin-top: 40px; padding-top: 20px; text-align: center;">
+      <p>Our Terms & Conditions | Privacy Policy | Copyright © 2025</p>
+    </div>
+  </footer>
+
+</body>
+</html>

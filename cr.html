@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at Stackly Home Interior Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #2a5c6b;
+            --secondary: #e8c07d;
+            --accent: #9cbfcb;
+            --light: #f8f5f0;
+            --dark: #1a1a1a;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(232, 192, 125, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(232, 192, 125, 0.4);
+        }
+        
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        /* Hero Section */
+        .hero-careers {
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(248, 245, 240, 0.9) 0%, rgba(248, 245, 240, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-careers h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .hero-careers p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            color: var(--dark);
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out 1s forwards;
+        }
+        
+        .pulse-button {
+            animation: pulse 2s infinite;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out 1.5s forwards, pulse 2s infinite 3s;
+        }
+        
+        .floating-furniture {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .furniture-icon {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+        }
+        
+        .sofa-icon {
+            width: 120px;
+            height: 60px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2843/2843314.png');
+            top: 20%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .lamp-icon {
+            width: 50px;
+            height: 80px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2843/2843335.png');
+            top: 60%;
+            right: 15%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        .plant-icon {
+            width: 70px;
+            height: 70px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2843/2843369.png');
+            bottom: 15%;
+            left: 20%;
+            animation: float 7s ease-in-out infinite 1s;
+        }
+        
+        /* Why Work With Us Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-carousel {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            flex: 1 1 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .benefit-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .benefit-card:nth-child(1).animate {
+            transition-delay: 0.1s;
+        }
+        
+        .benefit-card:nth-child(2).animate {
+            transition-delay: 0.2s;
+        }
+        
+        .benefit-card:nth-child(3).animate {
+            transition-delay: 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .icon-animation {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(42, 92, 107, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .benefit-card:hover .icon-animation {
+            background-color: var(--primary);
+            transform: rotate(10deg) scale(1.1);
+        }
+        
+        .benefit-card:hover .icon-animation i {
+            color: white;
+        }
+        
+        .icon-animation i {
+            font-size: 2rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Open Positions Section */
+        .positions-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .position-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+        
+        .position-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .position-item:nth-child(1).animate {
+            transition-delay: 0.1s;
+        }
+        
+        .position-item:nth-child(2).animate {
+            transition-delay: 0.2s;
+        }
+        
+        .position-item:nth-child(3).animate {
+            transition-delay: 0.3s;
+        }
+        
+        .position-header {
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .position-header:hover {
+            background-color: rgba(156, 191, 203, 0.1);
+        }
+        
+        .position-header h3 {
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+        
+        .position-meta {
+            display: flex;
+            align-items: center;
+        }
+        
+        .location-tag {
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 15px;
+            transition: var(--transition);
+        }
+        
+        .position-header:hover .location-tag {
+            transform: scale(1.05);
+        }
+        
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232a5c6b'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .position-item.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+        
+        .position-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background-color: rgba(248, 245, 240, 0.5);
+        }
+        
+        .position-details-content {
+            padding: 0 25px 25px;
+        }
+        
+        .position-details h4 {
+            margin: 20px 0 10px;
+            color: var(--primary);
+        }
+        
+        .position-details ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .position-details li {
+            margin-bottom: 8px;
+        }
+        
+        .apply-btn {
+            margin-top: 20px;
+        }
+        
+        /* Culture Section */
+        .culture-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        
+        .gallery-item.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .gallery-item:nth-child(1).animate {
+            transition-delay: 0.1s;
+        }
+        
+        .gallery-item:nth-child(2).animate {
+            transition-delay: 0.2s;
+        }
+        
+        .gallery-item:nth-child(3).animate {
+            transition-delay: 0.3s;
+        }
+        
+        .gallery-item:nth-child(4).animate {
+            transition-delay: 0.4s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Testimonial Section */
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+        
+        .testimonial.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid var(--secondary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial p::before,
+        .testimonial p::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--secondary);
+            opacity: 0.5;
+            position: absolute;
+        }
+        
+        .testimonial p::before {
+            top: -15px;
+            left: -20px;
+        }
+        
+        .testimonial p::after {
+            bottom: -25px;
+            right: -20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .slider-dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        /* CTA Section */
+        .career-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #1d4b58 100%);
+            color: white;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .career-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .career-cta p {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .glow-button {
+            background-color: var(--secondary);
+            color: var(--dark);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 15px rgba(232, 192, 125, 0.5);
+        }
+        
+        .glow-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(232, 192, 125, 0.8);
+        }
+        
+        .doodle-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+        
+        .doodle {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            animation: doodleFloat 15s linear infinite;
+        }
+        
+        .doodle-1 {
+            width: 100px;
+            height: 100px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2933/2933245.png');
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .doodle-2 {
+            width: 80px;
+            height: 80px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2933/2933327.png');
+            top: 60%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+        
+        .doodle-3 {
+            width: 120px;
+            height: 120px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2933/2933452.png');
+            bottom: 10%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+        
+        .doodle-4 {
+            width: 90px;
+            height: 90px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2933/2933245.png');
+            top: 30%;
+            right: 25%;
+            animation-delay: 9s;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(232, 192, 125, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(232, 192, 125, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(232, 192, 125, 0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes doodleFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) rotate(10deg);
+            }
+        }
+        
+        /* Typing Animation */
+        .typing-animation {
+            border-right: 3px solid var(--secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: var(--secondary);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-careers h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-careers {
+                height: auto;
+                padding: 120px 0;
+            }
+            
+            .hero-careers h1 {
+                font-size: 2.2rem;
+            }
+            
+            .benefit-card {
+                flex: 1 1 100%;
+            }
+            
+            .position-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .position-meta {
+                margin-top: 10px;
+            }
+            
+            .career-cta h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-careers h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .testimonial {
+                padding: 30px 20px;
+            }
+            
+            .career-cta {
+                padding: 60px 20px;
+            }
+            
+            .career-cta h2 {
+                font-size: 1.6rem;
+            }
+        }
+        /* Media Queries for All Devices */
+
+/* Large Desktops (1440px and up) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-careers h1 {
+        font-size: 4rem;
+    }
+}
+
+/* Standard Desktops (1200px - 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    .hero-careers h1 {
+        font-size: 3.2rem;
+    }
+    
+    .benefit-card {
+        padding: 30px 25px;
+    }
+}
+
+/* Laptops/Small Desktops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hero-careers h1 {
+        font-size: 2.8rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2.2rem;
+    }
+    
+    .benefit-card {
+        padding: 25px 20px;
+    }
+    
+    .position-header {
+        padding: 18px 20px;
+    }
+}
+
+/* Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Hero Section */
+    .hero-careers {
+        padding: 100px 0;
+    }
+    
+    .hero-careers h1 {
+        font-size: 2.4rem;
+    }
+    
+    /* Why Work With Us */
+    .benefits-carousel {
+        gap: 20px;
+    }
+    
+    .benefit-card {
+        flex: 1 1 calc(50% - 20px);
+        padding: 25px 20px;
+    }
+    
+    /* Open Positions */
+    .position-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .position-meta {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    /* Culture Gallery */
+    .culture-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Testimonials */
+    .testimonial {
+        padding: 30px;
+    }
+    
+    /* CTA */
+    .career-cta h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Large Phones/Small Tablets (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    /* Hero Section */
+    .hero-careers {
+        padding: 80px 0;
+    }
+    
+    .hero-careers h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-careers p {
+        font-size: 1.1rem;
+    }
+    
+    /* Why Work With Us */
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .benefit-card {
+        flex: 1 1 100%;
+    }
+    
+    /* Open Positions */
+    .position-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .location-tag {
+        font-size: 0.7rem;
+    }
+    
+    /* Culture Gallery */
+    .gallery-item {
+        height: 200px;
+    }
+    
+    /* Testimonials */
+    .testimonial p {
+        font-size: 1rem;
+    }
+    
+    /* CTA */
+    .career-cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .glow-button {
+        padding: 12px 30px;
+    }
+}
+
+/* Small Phones (up to 575px) */
+@media (max-width: 575px) {
+    /* Global */
+    .container {
+        width: 95%;
+    }
+    
+    section {
+        padding: 50px 0;
+    }
+    
+    /* Hero Section */
+    .hero-careers {
+        padding: 70px 0;
+    }
+    
+    .hero-careers h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-careers p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+    
+    .btn {
+        padding: 10px 25px;
+    }
+    
+    /* Why Work With Us */
+    .section-title h2 {
+        font-size: 1.6rem;
+    }
+    
+    .section-title p {
+        font-size: 0.95rem;
+    }
+    
+    .benefit-card {
+        padding: 20px 15px;
+    }
+    
+    .icon-animation {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+    
+    .icon-animation i {
+        font-size: 1.5rem;
+    }
+    
+    /* Open Positions */
+    .position-header {
+        padding: 15px;
+    }
+    
+    .position-header h3 {
+        font-size: 1rem;
+    }
+    
+    .position-details-content {
+        padding: 0 15px 15px;
+    }
+    
+    /* Culture Gallery */
+    .culture-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item {
+        height: 180px;
+    }
+    
+    /* Testimonials */
+    .testimonial {
+        padding: 25px 15px;
+    }
+    
+    .avatar {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .testimonial p {
+        font-size: 0.95rem;
+    }
+    
+    /* CTA */
+    .career-cta {
+        padding: 50px 15px;
+    }
+    
+    .career-cta h2 {
+        font-size: 1.6rem;
+    }
+    
+    .career-cta p {
+        font-size: 0.95rem;
+    }
+    
+    /* Footer */
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .social-icons {
+        gap: 15px;
+    }
+}
+
+/* Very Small Phones (up to 375px) */
+@media (max-width: 375px) {
+    /* Hero Section */
+    .hero-careers h1 {
+        font-size: 1.6rem;
+    }
+    
+    /* Why Work With Us */
+    .section-title h2 {
+        font-size: 1.4rem;
+    }
+    
+    /* Open Positions */
+    .position-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .location-tag {
+        margin-bottom: 5px;
+    }
+    
+    /* CTA */
+    .career-cta h2 {
+        font-size: 1.4rem;
+    }
+    
+    .glow-button {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Special Cases for Tall Mobile Screens */
+@media (max-width: 575px) and (min-height: 700px) {
+    .hero-careers {
+        height: 80vh;
+        min-height: auto;
+    }
+}
+
+/* Landscape Orientation for Tablets and Phones */
+@media (max-width: 991px) and (orientation: landscape) {
+    .hero-careers {
+        height: auto;
+        padding: 80px 0;
+    }
+    
+    .hero-careers h1 {
+        font-size: 2.2rem;
+    }
+    
+    .culture-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .hero-careers, .culture-gallery, .testimonial-slider, footer {
+        display: none;
+    }
+    
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+    
+    section {
+        padding: 20px 0;
+        page-break-inside: avoid;
+    }
+    
+    .position-item.active .position-details {
+        max-height: none;
+        display: block;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-careers">
+        <div class="floating-furniture">
+            <div class="furniture-icon sofa-icon"></div>
+            <div class="furniture-icon lamp-icon"></div>
+            <div class="furniture-icon plant-icon"></div>
+        </div>
+        <div class="container">
+            <h1 class="typing-animation">Design Your Career With Us</h1>
+            <p>Join Stackly's creative team transforming spaces and lives</p>
+            <a href="#positions" class="btn pulse-button">View Open Positions</a>
+        </div>
+    </section>
+
+    <!-- Why Work With Us Section -->
+    <section id="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Work With Us</h2>
+                <p>At Stackly, we believe our team is our greatest asset. We foster an environment where creativity thrives and careers flourish.</p>
+            </div>
+            
+            <div class="benefits-carousel">
+                <div class="benefit-card">
+                    <div class="icon-animation">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Career Growth</h3>
+                    <p>We invest in your professional development with training programs, mentorship, and opportunities to work on high-profile projects.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon-animation">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Creative Freedom</h3>
+                    <p>Bring your unique design vision to life with the support of our team and clients who value innovation and originality.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon-animation">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Team</h3>
+                    <p>Work with industry-leading designers in a supportive environment that values teamwork and shared success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions Section -->
+    <section id="positions" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Open Positions</h2>
+                <p>We're looking for talented individuals to join our growing team. Browse our current openings below.</p>
+            </div>
+            
+            <div class="positions-accordion">
+                <div class="position-item">
+                    <div class="position-header">
+                        <h3>Senior Interior Designer</h3>
+                        <div class="position-meta">
+                            <div class="location-tag">New York</div>
+                            <div class="arrow-icon"></div>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="position-details-content">
+                            <h4>About the Role</h4>
+                            <p>We're seeking an experienced Senior Interior Designer to lead residential and commercial projects from concept to completion. You'll work directly with clients, manage junior designers, and help shape our design direction.</p>
+                            
+                            <h4>Responsibilities</h4>
+                            <ul>
+                                <li>Develop creative design concepts that meet client objectives</li>
+                                <li>Create detailed drawings, specifications, and mood boards</li>
+                                <li>Manage project timelines and budgets</li>
+                                <li>Source materials and furnishings</li>
+                                <li>Mentor junior design staff</li>
+                            </ul>
+                            
+                            <h4>Requirements</h4>
+                            <ul>
+                                <li>7+ years of interior design experience</li>
+                                <li>Bachelor's degree in Interior Design or related field</li>
+                                <li>Proficiency in AutoCAD, SketchUp, and Adobe Creative Suite</li>
+                                <li>Strong portfolio of completed projects</li>
+                                <li>Excellent communication and client management skills</li>
+                            </ul>
+                            
+                            <a href="#apply" class="btn apply-btn">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="position-item">
+                    <div class="position-header">
+                        <h3>Interior Design Project Manager</h3>
+                        <div class="position-meta">
+                            <div class="location-tag">Chicago</div>
+                            <div class="arrow-icon"></div>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="position-details-content">
+                            <h4>About the Role</h4>
+                            <p>We're looking for a detail-oriented Project Manager to oversee the execution of our design projects, ensuring they're delivered on time, on budget, and to our high standards.</p>
+                            
+                            <h4>Responsibilities</h4>
+                            <ul>
+                                <li>Coordinate all phases of design projects</li>
+                                <li>Manage vendor relationships and procurement</li>
+                                <li>Track project budgets and timelines</li>
+                                <li>Facilitate communication between designers, clients, and contractors</li>
+                                <li>Resolve project issues and challenges</li>
+                            </ul>
+                            
+                            <h4>Requirements</h4>
+                            <ul>
+                                <li>5+ years of project management experience in interior design</li>
+                                <li>Strong organizational and multitasking skills</li>
+                                <li>Knowledge of construction processes and materials</li>
+                                <li>Proficiency in project management software</li>
+                                <li>Ability to read and interpret design drawings</li>
+                            </ul>
+                            
+                            <a href="#apply" class="btn apply-btn">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="position-item">
+                    <div class="position-header">
+                        <h3>Junior Interior Designer</h3>
+                        <div class="position-meta">
+                            <div class="location-tag">Remote</div>
+                            <div class="arrow-icon"></div>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="position-details-content">
+                            <h4>About the Role</h4>
+                            <p>This is an excellent opportunity for a recent graduate or early-career designer to grow their skills working alongside our senior design team on a variety of residential projects.</p>
+                            
+                            <h4>Responsibilities</h4>
+                            <ul>
+                                <li>Assist with space planning and design development</li>
+                                <li>Create presentation materials and renderings</li>
+                                <li>Research materials, finishes, and furnishings</li>
+                                <li>Prepare construction documents</li>
+                                <li>Support senior designers on client projects</li>
+                            </ul>
+                            
+                            <h4>Requirements</h4>
+                            <ul>
+                                <li>Degree in Interior Design or related field</li>
+                                <li>1-2 years of design experience (internships included)</li>
+                                <li>Proficiency in AutoCAD, Revit, or SketchUp</li>
+                                <li>Strong conceptual and spatial skills</li>
+                                <li>Eagerness to learn and grow</li>
+                            </ul>
+                            
+                            <a href="#apply" class="btn apply-btn">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Culture</h2>
+                <p>At Stackly, we've created a work environment that inspires creativity, collaboration, and personal growth.</p>
+            </div>
+            
+            <div class="culture-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Stackly Office Space">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Team Event">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Design Session">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Completed Project">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonials" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hear From Our Team</h2>
+                <p>Don't just take our word for it - here's what our team members say about working at Stackly.</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K.">
+                    </div>
+                    <p>Stackly gave me the creative freedom I always wanted while providing the support and resources to bring my visions to life. The collaborative environment pushes me to grow every day.</p>
+                    <div class="testimonial-author">Sarah K.</div>
+                    <div class="testimonial-role">Senior Designer, 4 years at Stackly</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                    </div>
+                    <p>What I love about Stackly is how they balance high standards with a genuine care for employee wellbeing. The professional development opportunities have accelerated my career beyond what I imagined.</p>
+                    <div class="testimonial-author">Michael T.</div>
+                    <div class="testimonial-role">Project Manager, 2 years at Stackly</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya M.">
+                    </div>
+                    <p>As a junior designer, I've learned more in my first year at Stackly than in four years of school. The mentorship program pairs you with experienced designers who truly invest in your growth.</p>
+                    <div class="testimonial-author">Priya M.</div>
+                    <div class="testimonial-role">Junior Designer, 1 year at Stackly</div>
+                </div>
+                
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="apply">
+        <div class="container">
+            <div class="career-cta">
+                <h2>Ready to design your future?</h2>
+                <p>Join our team of passionate designers and help create spaces that inspire.</p>
+                <button class="glow-button">Apply Now</button>
+                
+                <div class="doodle-animation">
+                    <div class="doodle doodle-1"></div>
+                    <div class="doodle doodle-2"></div>
+                    <div class="doodle doodle-3"></div>
+                    <div class="doodle doodle-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Stackly</div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="no6.html">Team</a>
+                <a href="cr.html">Careers</a>
+                <a href="no4.html">Contact</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/1BrqaZkJRe/" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/The_Stackly" class="social-icon" target="_blank">
+                    <i class="fab fa-x-twitter"></i> <!-- Twitter X -->
+                </a>
+                <a href="https://www.instagram.com/thestackly" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/the-stackly" class="social-icon" target="_blank">
+                    <i class="fab fa-linkedin-in"></i> <!-- LinkedIn -->
+                </a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 Stackly Home Interior Design. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animate elements when they come into view
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.benefit-card, .position-item, .gallery-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+        
+        // Accordion functionality for positions
+        function setupAccordion() {
+            const headers = document.querySelectorAll('.position-header');
+            
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    const details = header.nextElementSibling;
+                    
+                    // Close all other open items
+                    document.querySelectorAll('.position-item').forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.position-details').style.maxHeight = null;
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    
+                    if (item.classList.contains('active')) {
+                        details.style.maxHeight = details.scrollHeight + 'px';
+                    } else {
+                        details.style.maxHeight = null;
+                    }
+                });
+            });
+            
+            // Open first item by default
+            const firstItem = document.querySelector('.position-item');
+            if (firstItem) {
+                firstItem.classList.add('active');
+                firstItem.querySelector('.position-details').style.maxHeight = 
+                    firstItem.querySelector('.position-details').scrollHeight + 'px';
+            }
+        }
+        
+        // Testimonial slider
+        function setupTestimonialSlider() {
+            const testimonials = document.querySelectorAll('.testimonial');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentIndex = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                testimonials[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const slideIndex = parseInt(dot.getAttribute('data-slide'));
+                    showTestimonial(slideIndex);
+                });
+            });
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                let nextIndex = (currentIndex + 1) % testimonials.length;
+                showTestimonial(nextIndex);
+            }, 5000);
+        }
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            animateOnScroll();
+            setupAccordion();
+            setupTestimonialSlider();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

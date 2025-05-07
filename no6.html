@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Team - Stackly</title>
+  <link rel="stylesheet" href="styles2.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <header>
+    <h1>Meet Our Team</h1>
+    <p>Creative minds behind our success</p>
+  </header>
+
+  <section class="team-section">
+    <!-- Team Members -->
+    <div class="team-member" data-animate>
+      <img src="https://cdn.pixabay.com/photo/2023/01/25/13/05/woman-7743567_1280.jpg" alt="Priya Sharma">
+      <h3>Priya Sharma</h3>
+      <p class="role">Interior Designer</p>
+      <p class="achievement">🏆 Winner of 2023 Modern Minimalism Award</p>
+      <button onclick="showDetails('Priya Sharma', 'Specialist in minimalist luxury interiors and concept ideation.')">View Work</button>
+    </div>
+  
+    <div class="team-member" data-animate>
+      <img src="https://cdn.pixabay.com/photo/2015/01/12/10/45/man-597178_1280.jpg" alt="Rahul Verma">
+      <h3>Rahul Verma</h3>
+      <p class="role">Project Manager</p>
+      <p class="achievement">📈 Managed 100+ projects with 98% client satisfaction</p>
+      <button onclick="showDetails('Rahul Verma', 'Handles all timelines and client coordination with perfection.')">View Work</button>
+    </div>
+  
+    <div class="team-member" data-animate>
+      <img src="https://cdn.pixabay.com/photo/2023/01/26/13/34/woman-7746011_1280.jpg" alt="Simran Kaur">
+      <h3>Simran Kaur</h3>
+      <p class="role">3D Visualizer</p>
+      <p class="achievement">🎨 Expert in immersive photorealistic design</p>
+      <button onclick="showDetails('Simran Kaur', 'Transforms ideas into photo-realistic 3D designs.')">View Work</button>
+    </div>
+  
+    <div class="team-member" data-animate>
+      <img src="https://cdn.pixabay.com/photo/2024/11/22/13/20/man-9216455_1280.jpg" alt="Arjun Mehta">
+      <h3>Arjun Mehta</h3>
+      <p class="role">Architect Consultant</p>
+      <p class="achievement">🏗️ 15+ years experience with high-rise and luxury homes</p>
+      <button onclick="showDetails('Arjun Mehta', 'Advises on structure, space planning, and safety regulations.')">View Work</button>
+    </div>
+  
+    <div class="team-member" data-animate>
+      <img src="https://cdn.pixabay.com/photo/2024/10/06/04/13/woman-9098975_1280.jpg" alt="Sneha Iyer">
+      <h3>Sneha Iyer</h3>
+      <p class="role">Color & Texture Expert</p>
+      <p class="achievement">🎨 Known for unique color palettes and eco-friendly materials</p>
+      <button onclick="showDetails('Sneha Iyer', 'Creates harmony through color psychology and tactile finishes.')">View Work</button>
+    </div>
+  </section>
+
+  <!--  -->
+  <!-- Work Showcase Modal -->
+<div id="workModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="memberName"></h2>
+      <p id="memberDesc"></p>
+      <div class="work-gallery" id="workGallery">
+        <!-- Dynamic Images Will Appear Here -->
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- achivment section -->
+  <section class="achievement-section">
+    <h2>Our Achievements & Essentials</h2>
+    <p class="achieve-intro">Proud milestones and tools that help us deliver excellence in every corner we design.</p>
+  
+    <div class="achievement-grid">
+      <div class="achievement-card" data-animate>
+        <i class="icon">🏆</i>
+        <h3>50+ Design Awards</h3>
+        <p>Recognized for innovation, elegance, and functional interior spaces across India.</p>
+      </div>
+  
+      <div class="achievement-card" data-animate>
+        <i class="icon">🏠</i>
+        <h3>200+ Happy Homes</h3>
+        <p>Personalized dream spaces crafted with love and expertise, from compact studios to villas.</p>
+      </div>
+  
+      <div class="achievement-card" data-animate>
+        <i class="icon">👩‍💻</i>
+        <h3>Top Tech Tools</h3>
+        <p>From 3D rendering to virtual staging, we use the best software to preview your dream interior.</p>
+      </div>
+  
+      <div class="achievement-card" data-animate>
+        <i class="icon">🌿</i>
+        <h3>Eco-Conscious Materials</h3>
+        <p>We emphasize sustainable, toxin-free and durable materials in every project we undertake.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Stackly Interiors. All rights reserved.</p>
+  </footer>
+
+  <script src="script2.js"></script>
+</body>
+</html>

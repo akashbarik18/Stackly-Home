@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tell Us Your Story</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 28px;
+      font-family: 'Georgia', serif;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .form-section {
+      flex: 1 1 500px;
+      max-width: 550px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background-color: #123458;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #9b865e;
+    }
+
+    .features-section {
+      flex: 1 1 300px;
+      max-width: 400px;
+      background-color: #f9f8f6;
+      border-radius: 12px;
+      padding: 30px 25px;
+    }
+
+    .features-section h3 {
+      color: #8c704f;
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    .feature-icon {
+      font-size: 18px;
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        flex-direction: column;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .form-section, .features-section {
+        max-width: 100%;
+      }
+    }
+
+    /* ========== DESKTOP (1200px and above) ========== */
+@media (min-width: 1200px) {
+  .container {
+    flex-direction: row;
+    gap: 60px;
+    padding: 40px;
+  }
+
+  .form-section, .features-section {
+    max-width: 550px;
+  }
+
+  header {
+    font-size: 36px;
+  }
+}
+
+/* ========== LAPTOP (1024px to 1199px) ========== */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .container {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  header {
+    font-size: 32px;
+  }
+
+  .form-section, .features-section {
+    max-width: 500px;
+  }
+}
+
+/* ========== TABLET (768px to 1023px) ========== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  header {
+    font-size: 28px;
+  }
+
+  .form-section, .features-section {
+    max-width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* ========== MOBILE (up to 767px) ========== */
+@media (max-width: 767px) {
+  header {
+    font-size: 24px;
+    padding: 30px 10px 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .form-section, .features-section {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .features-section h3 {
+    font-size: 18px;
+  }
+
+  .feature {
+    font-size: 13px;
+  }
+
+  .footer-note {
+    font-size: 12px;
+    padding: 15px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>Tell Us Your Story</header>
+
+  <div class="container">
+
+    <div class="form-section">
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your first name">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="zip">Zip Code*</label>
+            <input type="text" id="zip" placeholder="Enter your postal code">
+            <small id="zip-location" style="color: #555;"></small>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="budget">Estimated Budget</label>
+            <select id="budget">
+              <option>Budget for furniture & decor</option>
+              <option>Under $1000</option>
+              <option>$1000 - $3000</option>
+              <option>$3000 - $6000</option>
+              <option>$6000+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="source">Where did you hear about us?</label>
+            <select id="source">
+              <option>Choose a source</option>
+              <option>Google</option>
+              <option>Instagram</option>
+              <option>Referral</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Enter a brief description</label>
+          <textarea id="description" placeholder="Describe your decor needs"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">CONTINUE</button>
+      </form>
+    </div>
+
+    <div class="features-section">
+      <h3>Why You'll ❤️ Stackly</h3>
+
+      <div class="feature">
+        <div class="feature-icon">👩‍🎨</div>
+        <div>An accomplished interior designer at your fingertips with no obligations after signup</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">✅</div>
+        <div>Complete satisfaction guaranteed to all of our clients</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🏷️</div>
+        <div>No markups or brand-loyalties</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">💰</div>
+        <div>Receive exclusive furniture and decor discounts at your favorite stores</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <div>We’ll never share your information without your consent!</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">Get a design you'll love – guaranteed!</div>
+
+  <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+
+  const messageBox = document.createElement("div");
+  messageBox.id = "form-message";
+  messageBox.style.marginTop = "15px";
+  form.appendChild(messageBox);
+
+  const locationBox = document.createElement("div");
+  locationBox.id = "zip-location";
+  locationBox.style.marginTop = "8px";
+  locationBox.style.fontSize = "14px";
+  const zipInput = document.getElementById("zip");
+  zipInput.insertAdjacentElement("afterend", locationBox);
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const zip = document.getElementById("zip").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const budget = document.getElementById("budget").value;
+    const source = document.getElementById("source").value;
+    const description = document.getElementById("description").value.trim();
+
+    const namePattern = /^[A-Za-z\s]+$/;
+    const zipPattern = /^\d{5,6}$/;
+    const phonePattern = /^\d{10}$/;
+
+    let errorMessage = "";
+
+    if (!namePattern.test(name)) {
+      errorMessage = "❌ Name must contain only letters and spaces.";
+    } else if (!zipPattern.test(zip)) {
+      errorMessage = "❌ Zip code must be 5 or 6 digits.";
+    } else if (!phonePattern.test(phone)) {
+      errorMessage = "❌ Phone number must be exactly 10 digits.";
+    } else if (budget === "Budget for furniture & decor") {
+      errorMessage = "❌ Please select your estimated budget.";
+    } else if (source === "Choose a source") {
+      errorMessage = "❌ Please select how you heard about us.";
+    } else if (description.length < 10) {
+      errorMessage = "❌ Description must be at least 10 characters.";
+    }
+
+    if (errorMessage) {
+      messageBox.textContent = errorMessage;
+      messageBox.style.color = "red";
+    } else {
+      messageBox.textContent = "✅ Your form has been submitted successfully!";
+      messageBox.style.color = "green";
+      form.reset();
+      locationBox.textContent = "";
+
+      setTimeout(() => {
+        messageBox.textContent = "";
+      }, 5000);
+    }
+  });
+
+  zipInput.addEventListener("blur", function () {
+    const zip = zipInput.value.trim();
+
+    if (!/^\d{5,6}$/.test(zip)) {
+      locationBox.textContent = "❌ Invalid ZIP code.";
+      locationBox.style.color = "red";
+      return;
+    }
+
+    locationBox.textContent = "🔄 Checking location...";
+    locationBox.style.color = "gray";
+
+    fetch(`https://api.zippopotam.us/IN/${zip}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Location not found");
+        }
+        return response.json();
+      })
+      .then(data => {
+        const place = data.places[0]["place name"];
+        const state = data.places[0]["state"];
+        locationBox.textContent = `📍 ${place}, ${state}`;
+        locationBox.style.color = "green";
+      })
+      .catch(() => {
+        locationBox.textContent = "❌ No location found for this ZIP code.";
+        locationBox.style.color = "red";
+      });
+  });
+});
+
+
+  </script>
+
+</body>
+</html>

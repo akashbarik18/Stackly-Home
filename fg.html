@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Forgot Password</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+        
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: rise 10s infinite ease-in;
+        }
+        
+        .bubble:nth-child(1) {
+            width: 40px;
+            height: 40px;
+            left: 10%;
+            animation-duration: 8s;
+        }
+        
+        .bubble:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+        
+        .bubble:nth-child(3) {
+            width: 50px;
+            height: 50px;
+            left: 35%;
+            animation-duration: 7s;
+            animation-delay: 2s;
+        }
+        
+        .bubble:nth-child(4) {
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            animation-duration: 11s;
+            animation-delay: 0s;
+        }
+        
+        .bubble:nth-child(5) {
+            width: 35px;
+            height: 35px;
+            left: 55%;
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+        
+        .bubble:nth-child(6) {
+            width: 45px;
+            height: 45px;
+            left: 65%;
+            animation-duration: 8s;
+            animation-delay: 3s;
+        }
+        
+        .bubble:nth-child(7) {
+            width: 25px;
+            height: 25px;
+            left: 75%;
+            animation-duration: 7s;
+            animation-delay: 2s;
+        }
+        
+        .bubble:nth-child(8) {
+            width: 80px;
+            height: 80px;
+            left: 80%;
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+        
+        @keyframes rise {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                bottom: 1080px;
+                transform: translateX(-200px);
+            }
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .logo h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .logo p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            color: #a777e3;
+            font-size: 18px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .input-group input:focus {
+            border-color: #6e8efb;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(110, 142, 251, 0.2);
+        }
+        
+        .error-message {
+            color: #ff4757;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .warning-message, .success-message {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+            display: none;
+        }
+        
+        .warning-message {
+            background-color: #fff4e6;
+            color: #e67e22;
+            border: 1px solid #ffe8cc;
+        }
+        
+        .success-message {
+            background-color: #ebfbee;
+            color: #2ecc71;
+            border: 1px solid #d3f9d8;
+        }
+        
+        .reset-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, #6e8efb, #a777e3);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .reset-btn:hover {
+            background: linear-gradient(to right, #5e7eea, #9767d3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reset-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .back-to-login {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .back-to-login a {
+            color: #6e8efb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    
+    <div class="container">
+        <div class="logo">
+            <img src="https://via.placeholder.com/80" alt="Stackly Logo">
+            <h1>Reset Your Password</h1>
+            <p>Enter your email to receive a password reset link</p>
+        </div>
+        
+        <form id="resetForm">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="resetEmail" placeholder="Email Address" required>
+                <div class="error-message" id="email-error">Please enter a valid email address</div>
+            </div>
+            
+            <button type="submit" class="reset-btn" disabled>Send Reset Link</button>
+            
+            <div class="warning-message" id="warning-message"></div>
+            <div class="success-message" id="success-message"></div>
+            
+            <div class="back-to-login">
+                Remember your password? <a href="no9.html">Back to login</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const resetForm = document.getElementById('resetForm');
+            const resetEmail = document.getElementById('resetEmail');
+            const emailError = document.getElementById('email-error');
+            const warningMessage = document.getElementById('warning-message');
+            const successMessage = document.getElementById('success-message');
+            const resetBtn = document.querySelector('.reset-btn');
+
+            // Disable the button initially
+            resetBtn.disabled = true;
+
+            // Email validation regex
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+            // Real-time validation for email
+            resetEmail.addEventListener('input', function() {
+                validateEmail();
+                checkFormValidity();
+            });
+
+            // Blur validation for email
+            resetEmail.addEventListener('blur', function() {
+                validateEmail(true);
+                checkFormValidity();
+            });
+
+            // Form submission
+            resetForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                handleResetRequest();
+            });
+
+            // Check if form is valid to enable/disable button
+            function checkFormValidity() {
+                const isEmailValid = validateEmail(false);
+                resetBtn.disabled = !isEmailValid;
+            }
+
+            // Email validation
+            function validateEmail(showError = false) {
+                const email = resetEmail.value.trim();
+                
+                if (!email) {
+                    if (showError) {
+                        emailError.textContent = 'Email is required';
+                        emailError.style.display = 'block';
+                    }
+                    return false;
+                }
+                
+                if (!emailRegex.test(email)) {
+                    if (showError) {
+                        emailError.textContent = 'Please enter a valid Gmail address';
+                        emailError.style.display = 'block';
+                    }
+                    return false;
+                }
+                
+                emailError.style.display = 'none';
+                return true;
+            }
+
+            // Handle reset request
+            function handleResetRequest() {
+                // Hide all messages
+                emailError.style.display = 'none';
+                warningMessage.style.display = 'none';
+                successMessage.style.display = 'none';
+                
+                // Validate form
+                const isEmailValid = validateEmail(true);
+                
+                if (!isEmailValid) {
+                    warningMessage.textContent = 'Please fix the errors to continue';
+                    warningMessage.style.display = 'block';
+                    return;
+                }
+                
+                // Get email value
+                const email = resetEmail.value.trim();
+                
+                // Simulate reset request
+                simulateResetRequest(email);
+            }
+
+            // Simulate reset request process
+            function simulateResetRequest(email) {
+                // Change button to loading state
+                resetBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                resetBtn.disabled = true;
+                
+                // Simulate API call delay
+                setTimeout(() => {
+                    // For demo purposes, we'll consider it successful
+                    const isSuccess = true; // Change to false to simulate failed request
+                    
+                    if (isSuccess) {
+                        // Success state
+                        resetBtn.textContent = 'Link Sent!';
+                        resetBtn.style.background = 'linear-gradient(to right, #2ecc71, #27ae60)';
+                        
+                        successMessage.textContent = 'Password reset link sent to your email!';
+                        successMessage.style.display = 'block';
+                        
+                        // Reset form
+                        resetForm.reset();
+                    } else {
+                        // Failed state
+                        resetBtn.textContent = 'Failed to Send';
+                        resetBtn.style.background = 'linear-gradient(to right, #ff4757, #e84118)';
+                        
+                        warningMessage.textContent = 'Failed to send reset link. Please try again.';
+                        warningMessage.style.display = 'block';
+                    }
+                    
+                    // Reset button after delay
+                    setTimeout(() => {
+                        resetBtn.innerHTML = 'Send Reset Link';
+                        resetBtn.style.background = 'linear-gradient(to right, #6e8efb, #a777e3)';
+                        checkFormValidity(); // Re-check form validity
+                    }, 2000);
+                }, 1500);
+            }
+
+            // Focus effects for input field
+            resetEmail.addEventListener('focus', function() {
+                this.parentElement.querySelector('i').style.color = '#6e8efb';
+            });
+            
+            resetEmail.addEventListener('blur', function() {
+                this.parentElement.querySelector('i').style.color = '#a777e3';
+            });
+        });
+    </script>
+</body>
+</html>

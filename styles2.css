@@ -1,0 +1,311 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fefefe;
+    color: #333;
+  }
+  
+  header {
+    background-color: #522546;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeInDown 1.2s ease-out;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    animation: slideUp 1s ease-out;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    opacity: 0.9;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  /* team section */
+  
+  .team-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    background: #fef7fb;
+  }
+  
+  .team-member {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: 260px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .team-member.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  }
+  
+  .team-member img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .team-member h3 {
+    margin: 10px 0 5px;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .role {
+    color: #777;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .achievement {
+    font-size: 0.9rem;
+    color: #522546;
+    margin-bottom: 15px;
+  }
+  
+  .team-member button {
+    background-color: #522546;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .team-member button:hover {
+    background-color: #7a3d6c;
+  }
+  
+  /* model content */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: auto;
+    animation: fadeIn 0.4s ease;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.5s ease;
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+    color: #522546;
+  }
+  
+  .modal-content p {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .work-gallery {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .work-gallery img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .work-gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  .close {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #888;
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes slideUp {
+    from {transform: translateY(40px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+  }
+  
+  /*achivment section  */
+  .achievement-section {
+    background-color: #f3edf3;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .achievement-section h2 {
+    font-size: 2.2rem;
+    color: #522546;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .achieve-intro {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+  
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+  }
+  
+  .achievement-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  .achievement-card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .achievement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+  
+  .achievement-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .achievement-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .achievement-card p {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  footer {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  

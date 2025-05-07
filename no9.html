@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Home - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .container {
+            position: relative;
+            width: 400px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+            animation: fadeIn 0.8s ease-out;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0)
+            );
+            transform: rotate(30deg);
+            z-index: -1;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+            transform: translateY(-20px);
+            opacity: 0;
+            animation: slideDown 0.6s 0.2s forwards;
+        }
+        
+        .logo img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+        
+        .logo h1 {
+            color: #4a4a4a;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .logo p {
+            color: #888;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+            transform: translateX(-20px);
+            opacity: 0;
+            animation: slideIn 0.5s forwards;
+        }
+        
+        .input-group:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        
+        .input-group:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .input-group i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a777e3;
+            font-size: 18px;
+        }
+        
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 0.6s 0.6s forwards;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 8px;
+            accent-color: #a777e3;
+        }
+        
+        .remember-me label {
+            color: #666;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .forgot-password a {
+            color: #a777e3;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .forgot-password a:hover {
+            color: #6e8efb;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(to right, #6e8efb, #a777e3);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(110, 142, 251, 0.4);
+            transition: all 0.3s ease;
+            transform: scale(0.95);
+            opacity: 0;
+            animation: scaleIn 0.5s 0.7s forwards;
+        }
+        
+        .login-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(110, 142, 251, 0.6);
+        }
+        
+        .signup-link {
+            text-align: center;
+            margin-top: 25px;
+            color: #666;
+            font-size: 14px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 0.6s 0.9s forwards;
+        }
+        
+        .signup-link a {
+            color: #a777e3;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .signup-link a:hover {
+            color: #6e8efb;
+        }
+        
+        .error-message {
+            color: #ff4757;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .success-message {
+            color: #2ecc71;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 15px;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .warning-message {
+            color: #f39c12;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 15px;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: rise 15s infinite ease-in;
+        }
+        
+        .bubble:nth-child(1) {
+            width: 40px;
+            height: 40px;
+            left: 10%;
+            animation-duration: 8s;
+        }
+        
+        .bubble:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+        
+        .bubble:nth-child(3) {
+            width: 50px;
+            height: 50px;
+            left: 35%;
+            animation-duration: 7s;
+            animation-delay: 2s;
+        }
+        
+        .bubble:nth-child(4) {
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            animation-duration: 11s;
+            animation-delay: 0s;
+        }
+        
+        .bubble:nth-child(5) {
+            width: 35px;
+            height: 35px;
+            left: 55%;
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+        
+        .bubble:nth-child(6) {
+            width: 45px;
+            height: 45px;
+            left: 65%;
+            animation-duration: 8s;
+            animation-delay: 3s;
+        }
+        
+        .bubble:nth-child(7) {
+            width: 25px;
+            height: 25px;
+            left: 75%;
+            animation-duration: 7s;
+            animation-delay: 2s;
+        }
+        
+        .bubble:nth-child(8) {
+            width: 80px;
+            height: 80px;
+            left: 80%;
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+        
+        @keyframes rise {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                bottom: 1080px;
+                transform: translateX(-200px);
+            }
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideDown {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes scaleIn {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    
+    <div class="container">
+        <div class="logo">
+            <!-- <img src="https://via.placeholder.com/80" alt="Stackly Logo"> -->
+            <h1>Stackly</h1>
+            <p>Welcome back! Please login to your account</p>
+        </div>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <div class="error-message" id="email-error">Please enter a valid email address</div>
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" required minlength="8">
+                <div class="error-message" id="password-error">Password must be at least 8 characters</div>
+            </div>
+            
+            <div class="options">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <div class="forgot-password">
+                    <a href="fg.html">Forgot password?</a>
+                </div>
+            </div>
+            
+            <a href="index.html">
+                <button type="button" class="login-btn">Login</button>
+              </a>
+              
+            
+            <div class="warning-message" id="warning-message"></div>
+            <div class="success-message" id="success-message"></div>
+            
+            <div class="signup-link">
+                Don't have an account? <a href="no10.html">Sign up</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    // DOM Elements
+    const loginForm = document.getElementById('loginForm');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const emailError = document.getElementById('email-error');
+    const passwordError = document.getElementById('password-error');
+    const warningMessage = document.getElementById('warning-message');
+    const successMessage = document.getElementById('success-message');
+    const loginBtn = document.querySelector('.login-btn');
+
+    // Disable the button initially
+    loginBtn.disabled = true;
+
+    // Email validation regex
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+    // Real-time validation for email
+    emailInput.addEventListener('input', function() {
+        validateEmail();
+        checkFormValidity();
+    });
+
+    // Real-time validation for password
+    passwordInput.addEventListener('input', function() {
+        validatePassword();
+        checkFormValidity();
+    });
+
+    // Blur validation for email
+    emailInput.addEventListener('blur', function() {
+        validateEmail(true);
+        checkFormValidity();
+    });
+
+    // Blur validation for password
+    passwordInput.addEventListener('blur', function() {
+        validatePassword(true);
+        checkFormValidity();
+    });
+
+    // Form submission
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        handleLogin();
+    });
+
+    // Check if form is valid to enable/disable button
+    function checkFormValidity() {
+        const isEmailValid = validateEmail(false);
+        const isPasswordValid = validatePassword(false);
+        loginBtn.disabled = !(isEmailValid && isPasswordValid);
+    }
+
+    // Email validation
+    function validateEmail(showError = false) {
+        const email = emailInput.value.trim();
+        
+        if (!email) {
+            if (showError) {
+                emailError.textContent = 'Email is required';
+                emailError.style.display = 'block';
+            }
+            return false;
+        }
+        
+        if (!emailRegex.test(email)) {
+            if (showError) {
+                emailError.textContent = 'Please enter a valid Gmail address';
+                emailError.style.display = 'block';
+            }
+            return false;
+        }
+        
+        emailError.style.display = 'none';
+        return true;
+    }
+
+    // Password validation
+    function validatePassword(showError = false) {
+        const password = passwordInput.value.trim();
+        
+        if (!password) {
+            if (showError) {
+                passwordError.textContent = 'Password is required';
+                passwordError.style.display = 'block';
+            }
+            return false;
+        }
+        
+        if (password.length < 8) {
+            if (showError) {
+                passwordError.textContent = 'Password must be at least 8 characters';
+                passwordError.style.display = 'block';
+            }
+            return false;
+        }
+        
+        passwordError.style.display = 'none';
+        return true;
+    }
+
+    // Handle login process
+    function handleLogin() {
+        // Hide all messages
+        emailError.style.display = 'none';
+        passwordError.style.display = 'none';
+        warningMessage.style.display = 'none';
+        successMessage.style.display = 'none';
+        
+        // Validate form
+        const isEmailValid = validateEmail(true);
+        const isPasswordValid = validatePassword(true);
+        
+        if (!isEmailValid || !isPasswordValid) {
+            warningMessage.textContent = 'Please fix the errors to continue';
+            warningMessage.style.display = 'block';
+            return;
+        }
+        
+        // Get form values
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+        const rememberMe = document.getElementById('remember').checked;
+        
+        // Simulate login
+        simulateLogin(email, password, rememberMe);
+    }
+
+    // Simulate login process
+    function simulateLogin(email, password, rememberMe) {
+        // Change button to loading state
+        loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+        loginBtn.style.background = 'linear-gradient(to right, #6e8efb, #a777e3)';
+        
+        // Simulate API call delay
+        setTimeout(() => {
+            // For demo purposes, we'll consider it successful
+            const isSuccess = true; // Change to false to simulate failed login
+            
+            if (isSuccess) {
+                // Success state
+                loginBtn.textContent = 'Login Successful!';
+                loginBtn.style.background = 'linear-gradient(to right, #2ecc71, #27ae60)';
+                
+                successMessage.textContent = 'Welcome back! Redirecting to your dashboard...';
+                successMessage.style.display = 'block';
+                
+                // Reset form
+                loginForm.reset();
+                
+                // In a real app, you would redirect here
+                // setTimeout(() => { window.location.href = '/dashboard'; }, 2000);
+            } else {
+                // Failed login state
+                loginBtn.textContent = 'Login Failed';
+                loginBtn.style.background = 'linear-gradient(to right, #ff4757, #e84118)';
+                
+                warningMessage.textContent = 'Invalid email or password. Please try again.';
+                warningMessage.style.display = 'block';
+            }
+            
+            // Reset button after delay
+            setTimeout(() => {
+                loginBtn.innerHTML = 'Login';
+                loginBtn.style.background = 'linear-gradient(to right, #6e8efb, #a777e3)';
+                checkFormValidity(); // Re-check form validity after reset
+            }, 2000);
+        }, 1500);
+    }
+
+    // Focus effects for input fields
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.querySelector('i').style.color = '#6e8efb';
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.querySelector('i').style.color = '#a777e3';
+        });
+    });
+});
+    </script>
+</body>
+</html>
