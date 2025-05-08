@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up | Stackly Electronics</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      min-height: 100vh;
+    }
+
+    .bubbles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: rise 10s infinite ease-in;
+    }
+
+    .bubble:nth-child(1) {
+      width: 40px;
+      height: 40px;
+      left: 10%;
+      animation-duration: 8s;
+    }
+
+    .bubble:nth-child(2) {
+      width: 20px;
+      height: 20px;
+      left: 20%;
+      animation-duration: 5s;
+      animation-delay: 1s;
+    }
+
+    .bubble:nth-child(3) {
+      width: 50px;
+      height: 50px;
+      left: 35%;
+      animation-duration: 7s;
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(4) {
+      width: 80px;
+      height: 80px;
+      left: 50%;
+      animation-duration: 11s;
+      animation-delay: 0s;
+    }
+
+    .bubble:nth-child(5) {
+      width: 35px;
+      height: 35px;
+      left: 55%;
+      animation-duration: 6s;
+      animation-delay: 1s;
+    }
+
+    .bubble:nth-child(6) {
+      width: 45px;
+      height: 45px;
+      left: 65%;
+      animation-duration: 8s;
+      animation-delay: 3s;
+    }
+
+    .bubble:nth-child(7) {
+      width: 25px;
+      height: 25px;
+      left: 75%;
+      animation-duration: 7s;
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(8) {
+      width: 80px;
+      height: 80px;
+      left: 80%;
+      animation-duration: 6s;
+      animation-delay: 1s;
+    }
+
+    .bubble:nth-child(9) {
+      width: 15px;
+      height: 15px;
+      left: 70%;
+      animation-duration: 9s;
+      animation-delay: 0s;
+    }
+
+    .bubble:nth-child(10) {
+      width: 50px;
+      height: 50px;
+      left: 85%;
+      animation-duration: 5s;
+      animation-delay: 3s;
+    }
+
+    @keyframes rise {
+      0% {
+        bottom: -100px;
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(100px);
+      }
+      100% {
+        bottom: 1080px;
+        transform: translateX(-200px);
+      }
+    }
+
+    .signup-container {
+      max-width: 400px;
+      margin: 60px auto;
+      padding: 40px;
+      background: #ffffff10;
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      color: white;
+      animation: slideIn 0.6s ease-out;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #f9fcfc;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s forwards;
+    }
+
+    .input-group:nth-child(1) { animation-delay: 0.2s; }
+    .input-group:nth-child(2) { animation-delay: 0.4s; }
+    .input-group:nth-child(3) { animation-delay: 0.6s; }
+    .input-group:nth-child(4) { animation-delay: 0.8s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px;
+      background: rgba(12, 12, 12, 0.1);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 15px;
+    }
+
+    .input-group label {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-size: 14px;
+      color: #eceaea;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .input-group input:focus + label,
+.input-group input:not(:placeholder-shown):valid + label {
+  top: -10px;
+  font-size: 12px;
+  color: #e6960c;
+  background: black;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+    .warning, .success {
+      display: block;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .warning.show {
+      background: #ff4d4d;
+      color: white;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .success.show {
+      background: #2ecc71;
+      color: white;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .signup-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #EAECC6;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s forwards;
+      animation-delay: 1s;
+    }
+
+    .signup-btn:hover {
+      background: #0f4ad3;
+      box-shadow: 0 0 18px #03effcaa;
+      color: white;
+    }
+
+    .bottom-text {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #eee;
+    }
+
+    .bottom-text a {
+      color: #ff9500;
+      text-decoration: none;
+    }
+
+    .loader {
+      border: 2px solid #f3f3f3;
+      border-top: 2px solid #333;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      animation: spin 0.6s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    /* Desktop (Large screens: 1200px and up) */
+@media (min-width: 1200px) {
+  .signup-container {
+    max-width: 450px;
+    padding: 50px;
+    font-size: 16px;
+  }
+}
+
+/* Laptop (Medium screens: 992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .signup-container {
+    max-width: 420px;
+    padding: 45px;
+    font-size: 15px;
+  }
+}
+
+/* Tablet (Small screens: 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .signup-container {
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 35px;
+    font-size: 15px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+/* Mobile (Extra small screens: below 768px) */
+@media (max-width: 767px) {
+  .signup-container {
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 25px;
+    font-size: 14px;
+  }
+
+  .input-group input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .signup-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .bottom-text {
+    font-size: 13px;
+  }
+}
+/* For screens less than 579px */
+@media (max-width: 578px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .signup-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    font-size: 13.5px;
+    box-sizing: border-box;
+    height: 100vh; /* full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .input-group {
+    width: 100%;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 13px;
+    box-sizing: border-box;
+  }
+
+  .signup-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .bottom-text {
+    font-size: 12.5px;
+  }
+}
+
+
+
+/* For screens less than 390px */
+/* For screens less than 390px - Full-width container */
+/*   */
+
+
+  </style>
+</head>
+<body>
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div class="signup-container">
+    <h2>Create Your Account</h2>
+
+    <div id="warningMsg" class="warning"></div>
+    <div id="successMsg" class="success"></div>
+
+    <form id="signupForm" novalidate>
+      <div class="input-group">
+        <input type="text" id="name" placeholder=" " required />
+        <label for="name">Full Name</label>
+      </div>
+      <div class="input-group">
+        <input type="email" id="email" placeholder=" " required />
+        <label for="email">Email (Gmail only)</label>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder=" " required />
+        <label for="password">Password (min 8 characters)</label>
+      </div>
+      <div class="input-group">
+        <input type="password" id="confirmPassword" placeholder=" " required />
+        <label for="confirmPassword">Confirm Password</label>
+      </div>
+
+      <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+
+    <div class="bottom-text">
+      Already have an account? <a href="no9.html">Login Here</a>
+    </div>
+  </div>
+
+  <script>
+   const form = document.getElementById('signupForm');
+const warning = document.getElementById('warningMsg');
+const success = document.getElementById('successMsg');
+const signupBtn = document.querySelector('.signup-btn');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+
+  warning.classList.remove('show');
+  success.classList.remove('show');
+
+  const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  const nameRegex = /^[A-Za-z\s]+$/;
+
+  if (!name || !email || !password || !confirmPassword) {
+    warning.textContent = "All fields are required.";
+    warning.classList.add('show');
+    return;
+  }
+
+  if (!nameRegex.test(name)) {
+    warning.textContent = "Name must contain only letters and spaces.";
+    warning.classList.add('show');
+    return;
+  }
+
+  if (!gmailRegex.test(email)) {
+    warning.textContent = "Only Gmail addresses are allowed. example@gmail.com";
+    warning.classList.add('show');
+    return;
+  }
+
+  if (password.length < 8) {
+    warning.textContent = "Password must be at least 8 characters.";
+    warning.classList.add('show');
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    warning.textContent = "Passwords do not match.";
+    warning.classList.add('show');
+    return;
+  }
+
+  // Simulate signup loading
+  signupBtn.innerHTML = '<span class="loader"></span> Signing Up...';
+  signupBtn.disabled = true;
+
+  setTimeout(() => {
+    success.textContent = "Account created successfully!";
+    success.classList.add('show');
+    signupBtn.innerHTML = 'Sign Up';
+    signupBtn.disabled = false;
+
+    setTimeout(() => {
+      window.location.href = "no9.html";
+    }, 1500);
+  }, 2000);
+});
+
+  </script>
+</body>
+</html>
