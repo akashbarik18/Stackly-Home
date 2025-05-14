@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Interiors - Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h1>Stackly</h1>
+        <span>Interiors</span>
+      </div>
+      
+      <nav class="main-nav">
+        <ul>
+          <li class="active"><a href="#" id="dashboard-link"><i class="fas fa-home"></i> Dashboard</a></li>
+          <li><a href="#" id="projects-link"><i class="fas fa-paint-roller"></i> Projects</a></li>
+          <li><a href="#" id="clients-link"><i class="fas fa-users"></i> Clients</a></li>
+          <li><a href="#" id="appointments-link"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+          <li><a href="#" id="analytics-link"><i class="fas fa-chart-line"></i> Analytics</a></li>
+          <li><a href="#" id="settings-link"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="index.html" id="main-site-link"><i class="fas fa-globe"></i> Main Website</a></li>
+        </ul>
+      </nav>
+      
+      <div class="user-profile">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User Profile">
+        <div class="user-info">
+          <strong>Sarah Johnson</strong>
+          <span>Lead Designer</span>
+        </div>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search projects, clients...">
+        </div>
+        <div class="notifications">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge">3</span>
+        </div>
+      </header>
+
+     <!-- Dashboard Content Sections -->
+<section id="dashboard-section" class="content-section active">
+  <div class="dashboard-overview">
+    <h2>Dashboard Overview</h2>
+    
+    <!-- Quick Stats Row -->
+    <div class="stats-cards">
+      <div class="stat-card">
+        <div class="stat-icon" style="background-color: #FFE8E8;">
+          <i class="fas fa-project-diagram" style="color: #FF6B6B;"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Active Projects</h3>
+          <p>12</p>
+          <span class="stat-trend positive">+2 this week</span>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon" style="background-color: #E8F5FF;">
+          <i class="fas fa-users" style="color: #4D96FF;"></i>
+        </div>
+        <div class="stat-info">
+          <h3>New Clients</h3>
+          <p>5</p>
+          <span class="stat-trend positive">+3 this month</span>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon" style="background-color: #E8FFEA;">
+          <i class="fas fa-calendar-check" style="color: #6BCB77;"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Upcoming Meetings</h3>
+          <p>7</p>
+          <span class="stat-trend neutral">2 today</span>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon" style="background-color: #FFF4E8;">
+          <i class="fas fa-dollar-sign" style="color: #FFA41B;"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Revenue</h3>
+          <p>$24,580</p>
+          <span class="stat-trend positive">12% increase</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Dashboard Content -->
+    <div class="dashboard-content-grid">
+      <!-- Recent Projects -->
+      <div class="dashboard-card">
+        <div class="card-header">
+          <h3>Recent Projects</h3>
+          <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="project-list">
+          <div class="project-item">
+            <div class="project-preview" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_1280.jpg');"></div>
+            <div class="project-details">
+              <h4>Modern Living Room</h4>
+              <div class="project-meta">
+                <span class="status-badge completed">Completed</span>
+                <span class="project-date"><i class="far fa-calendar-alt"></i> Oct 15, 2023</span>
+              </div>
+              <div class="project-client">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="client-avatar">
+                <span>Priya Sharma</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="project-preview" style="background-image: url('https://cdn.pixabay.com/photo/2016/04/18/08/50/kitchen-1336160_1280.jpg');"></div>
+            <div class="project-details">
+              <h4>Kitchen Remodel</h4>
+              <div class="project-meta">
+                <span class="status-badge in-progress">In Progress</span>
+                <span class="project-date"><i class="far fa-calendar-alt"></i> Nov 5, 2023</span>
+              </div>
+              <div class="project-client">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="client-avatar">
+                <span>Rahul Verma</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project Timeline -->
+      <div class="dashboard-card">
+        <div class="card-header">
+          <h3>Project Timeline</h3>
+          <div class="timeline-filter">
+            <select>
+              <option>This Month</option>
+              <option selected>Next 3 Months</option>
+              <option>All Projects</option>
+            </select>
+          </div>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-date">Dec 10</div>
+            <div class="timeline-content">
+              <h4>Luxury Villa Final Review</h4>
+              <p>Meeting with client to finalize design</p>
+              <div class="timeline-meta">
+                <span class="timeline-status in-progress">Design Phase</span>
+                <span class="timeline-team">
+                  <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Team Member">
+                  <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Team Member">
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">Dec 15</div>
+            <div class="timeline-content">
+              <h4>Office Space Implementation</h4>
+              <p>Begin furniture installation</p>
+              <div class="timeline-meta">
+                <span class="timeline-status pending">Scheduled</span>
+                <span class="timeline-team">
+                  <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Team Member">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quick Actions -->
+      <div class="dashboard-card quick-actions-card">
+        <div class="card-header">
+          <h3>Quick Actions</h3>
+        </div>
+        <div class="action-buttons">
+          <button class="action-btn">
+            <i class="fas fa-plus"></i>
+            <span>New Project</span>
+          </button>
+          <button class="action-btn">
+            <i class="fas fa-user-plus"></i>
+            <span>Add Client</span>
+          </button>
+          <button class="action-btn">
+            <i class="fas fa-calendar-plus"></i>
+            <span>Schedule Meeting</span>
+          </button>
+          <button class="action-btn">
+            <i class="fas fa-file-invoice"></i>
+            <span>Create Invoice</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Recent Activity -->
+      <div class="dashboard-card">
+        <div class="card-header">
+          <h3>Recent Activity</h3>
+        </div>
+        <div class="activity-feed">
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-file-signature"></i>
+            </div>
+            <div class="activity-content">
+              <p><strong>Contract signed</strong> for Modern Apartment project</p>
+              <span class="activity-time">2 hours ago</span>
+            </div>
+          </div>
+          
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-comment-dots"></i>
+            </div>
+            <div class="activity-content">
+              <p><strong>New message</strong> from Priya Sharma</p>
+              <span class="activity-time">5 hours ago</span>
+            </div>
+          </div>
+          
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="activity-content">
+              <p>Project <strong>Luxury Villa</strong> completed</p>
+              <span class="activity-time">Yesterday</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- Projects Section -->
+      <section id="projects-section" class="content-section">
+        <div class="section-header">
+          <h2>All Projects</h2>
+          <button class="btn-primary" id="add-project-btn">
+            <i class="fas fa-plus"></i> Add Project
+          </button>
+        </div>
+        
+        <div class="projects-table-container">
+          <table class="projects-table">
+            <thead>
+              <tr>
+                <th>Project Name</th>
+                <th>Client</th>
+                <th>Status</th>
+                <th>Start Date</th>
+                <th>Budget</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Modern Living Room</td>
+                <td>Priya Sharma</td>
+                <td><span class="status-badge completed">Completed</span></td>
+                <td>15 Oct 2023</td>
+                <td>$3,200</td>
+                <td>
+                  <button class="btn-action"><i class="fas fa-eye"></i></button>
+                  <button class="btn-action"><i class="fas fa-edit"></i></button>
+                  <button class="btn-action"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <!-- More project rows would be dynamically added -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Clients Section -->
+     <section id="clients-section" class="content-section">
+  <div class="section-header">
+    <h2>Client Management</h2>
+    <div class="section-controls">
+      <input type="text" id="search-client" placeholder="Search clients..." />
+      <select id="filter-status">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <button class="btn-primary" id="add-client-btn">
+        <i class="fas fa-plus"></i> Add Client
+      </button>
+    </div>
+  </div>
+
+  <div class="clients-grid">
+    <!-- Example Client Card -->
+    <div class="client-card">
+      <div class="client-avatar">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client Avatar">
+      </div>
+      <div class="client-info">
+        <h3>Priya Sharma <span class="status-tag active">Active</span></h3>
+        <p><i class="fas fa-envelope"></i> priya@example.com</p>
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+        <div class="client-meta">
+          <span>3 Projects</span>
+          <span>Last active: 2 days ago</span>
+        </div>
+        <div class="client-notes">
+          <strong>Notes:</strong>
+          <p>Prefers weekly updates. Interested in premium features.</p>
+        </div>
+      </div>
+      <div class="client-actions">
+        <button class="btn-action" title="Send Email"><i class="fas fa-envelope"></i></button>
+        <button class="btn-action" title="Edit Client"><i class="fas fa-edit"></i></button>
+        <button class="btn-action" title="Delete Client"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+
+    <!-- Additional client cards can be added here -->
+  </div>
+</section>
+
+
+      <!-- Appointments Section -->
+      <section id="appointments-section" class="content-section">
+  <div class="section-header">
+    <h2>Appointment Calendar</h2>
+    <div class="header-actions">
+      <button class="btn-primary" id="new-appointment-btn">
+        <i class="fas fa-plus"></i> New Appointment
+      </button>
+      <div class="view-toggle">
+        <button class="btn-view active" data-view="day">Day</button>
+        <button class="btn-view" data-view="week">Week</button>
+        <button class="btn-view" data-view="month">Month</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="calendar-container">
+    <div class="calendar-header">
+      <button class="btn-calendar-nav" id="prev-period">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <h3>December 2023</h3>
+      <button class="btn-calendar-nav" id="next-period">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <button class="btn-today">Today</button>
+    </div>
+    
+    <div class="calendar-weekdays">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </div>
+    
+    <div class="calendar-grid">
+      <!-- Previous month's days -->
+      <div class="calendar-day other-month">26</div>
+      <div class="calendar-day other-month">27</div>
+      <div class="calendar-day other-month">28</div>
+      <div class="calendar-day other-month">29</div>
+      <div class="calendar-day other-month">30</div>
+      
+      <!-- Current month's days -->
+      <div class="calendar-day">
+        <span class="day-number">1</span>
+        <div class="appointment-badge" style="background-color: #4CAF50;">10:00 AM</div>
+      </div>
+      <div class="calendar-day">
+        <span class="day-number">2</span>
+      </div>
+      <!-- More days... -->
+      <div class="calendar-day today">
+        <span class="day-number">5</span>
+        <div class="appointment-badge" style="background-color: #2196F3;">2:30 PM</div>
+        <div class="appointment-badge" style="background-color: #FF9800;">4:15 PM</div>
+      </div>
+      <!-- More days... -->
+      <div class="calendar-day">
+        <span class="day-number">15</span>
+        <div class="appointment-badge" style="background-color: #9C27B0;">All Day</div>
+      </div>
+      <!-- More days... -->
+    </div>
+  </div>
+  
+  <div class="appointments-list-container">
+    <div class="appointments-list-header">
+      <h3>Upcoming Appointments</h3>
+      <div class="appointment-filter">
+        <select id="appointment-filter">
+          <option value="all">All Appointments</option>
+          <option value="today">Today</option>
+          <option value="week">This Week</option>
+          <option value="month">This Month</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="pending">Pending</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="appointments-list">
+      <div class="appointment-card confirmed">
+        <div class="appointment-time" style="border-left: 4px solid #4CAF50;">
+          <span class="time">10:00 AM</span>
+          <span class="duration">30 mins</span>
+        </div>
+        <div class="appointment-details">
+          <h4>Client Consultation</h4>
+          <p class="client-name">Sarah Johnson</p>
+          <p class="appointment-notes">Initial design consultation for new website</p>
+        </div>
+        <div class="appointment-actions">
+          <button class="btn-icon"><i class="fas fa-edit"></i></button>
+          <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+        </div>
+      </div>
+      
+      <div class="appointment-card pending">
+        <div class="appointment-time" style="border-left: 4px solid #FF9800;">
+          <span class="time">2:30 PM</span>
+          <span class="duration">1 hour</span>
+        </div>
+        <div class="appointment-details">
+          <h4>Project Review</h4>
+          <p class="client-name">Mark Williams</p>
+          <p class="appointment-notes">Review final deliverables for e-commerce project</p>
+        </div>
+        <div class="appointment-actions">
+          <button class="btn-icon"><i class="fas fa-check"></i></button>
+          <button class="btn-icon"><i class="fas fa-edit"></i></button>
+          <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+        </div>
+      </div>
+      
+      <div class="appointment-card">
+        <div class="appointment-time" style="border-left: 4px solid #2196F3;">
+          <span class="time">4:15 PM</span>
+          <span class="duration">45 mins</span>
+        </div>
+        <div class="appointment-details">
+          <h4>Team Meeting</h4>
+          <p class="client-name">Internal</p>
+          <p class="appointment-notes">Weekly sprint planning</p>
+        </div>
+        <div class="appointment-actions">
+          <button class="btn-icon"><i class="fas fa-edit"></i></button>
+          <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="appointment-list-footer">
+      <p>Showing 3 of 12 appointments</p>
+      <button class="btn-load-more">Load More</button>
+    </div>
+  </div>
+</section>
+
+      <!-- Analytics Section -->
+      <!-- Analytics Section -->
+<section id="analytics-section" class="content-section">
+  <div class="section-header">
+    <h2>Business Analytics Dashboard</h2>
+    <div class="analytics-period-selector">
+      <select id="analytics-period">
+        <option value="7">Last 7 Days</option>
+        <option value="30" selected>Last 30 Days</option>
+        <option value="90">Last Quarter</option>
+        <option value="365">Last Year</option>
+        <option value="custom">Custom Range</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="analytics-summary-cards">
+    <div class="summary-card">
+      <div class="card-icon revenue-icon">
+        <i class="fas fa-dollar-sign"></i>
+      </div>
+      <div class="card-content">
+        <h3>Total Revenue</h3>
+        <p class="value">$24,580</p>
+        <p class="change positive">↑ 12% from last period</p>
+      </div>
+    </div>
+    
+    <div class="summary-card">
+      <div class="card-icon projects-icon">
+        <i class="fas fa-project-diagram"></i>
+      </div>
+      <div class="card-content">
+        <h3>Active Projects</h3>
+        <p class="value">18</p>
+        <p class="change neutral">→ No change</p>
+      </div>
+    </div>
+    
+    <div class="summary-card">
+      <div class="card-icon clients-icon">
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="card-content">
+        <h3>New Clients</h3>
+        <p class="value">7</p>
+        <p class="change positive">↑ 22% from last period</p>
+      </div>
+    </div>
+    
+    <div class="summary-card">
+      <div class="card-icon satisfaction-icon">
+        <i class="fas fa-smile"></i>
+      </div>
+      <div class="card-content">
+        <h3>Client Satisfaction</h3>
+        <p class="value">94%</p>
+        <p class="change negative">↓ 2% from last period</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="analytics-charts">
+    <div class="chart-container">
+      <h3 class="chart-title">Revenue Trends</h3>
+      <canvas id="revenue-chart"></canvas>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="color-box primary"></span> This Period</span>
+        <span class="legend-item"><span class="color-box secondary"></span> Previous Period</span>
+      </div>
+    </div>
+    
+    <div class="chart-container">
+      <h3 class="chart-title">Project Status</h3>
+      <canvas id="projects-chart"></canvas>
+      <div class="chart-note">
+        <p>5 projects completed this period</p>
+      </div>
+    </div>
+    
+    <div class="chart-container">
+      <h3 class="chart-title">Client Acquisition</h3>
+      <canvas id="client-acquisition-chart"></canvas>
+      <div class="chart-source">
+        <p>Source: CRM System & Marketing Analytics</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="analytics-actions">
+    <button class="btn btn-export">
+      <i class="fas fa-file-export"></i> Export Report
+    </button>
+    <button class="btn btn-share">
+      <i class="fas fa-share-alt"></i> Share Dashboard
+    </button>
+    <button class="btn btn-schedule">
+      <i class="fas fa-calendar-alt"></i> Schedule Report
+    </button>
+  </div>
+  
+  <div class="analytics-footer">
+    <p>Data last updated: May 13, 2025 10:15 AM</p>
+    <a href="#" class="refresh-link">
+      <i class="fas fa-sync-alt"></i> Refresh Data
+    </a>
+  </div>
+</section>
+<!-- Settings Section -->
+<section id="settings-section" class="content-section">
+  <div class="section-header">
+    <h2>Settings</h2>
+    <p class="section-description">Manage your account preferences and settings</p>
+  </div>
+  
+  <div class="settings-tabs">
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="profile">Profile</button>
+      <button class="tab-btn" data-tab="account">Account</button>
+      <button class="tab-btn" data-tab="notifications">Notifications</button>
+      <button class="tab-btn" data-tab="team">Team</button>
+    </div>
+    
+    <div class="tab-content active" id="profile-tab">
+      <form class="settings-form">
+        <div class="form-group">
+          <label for="profile-name">Full Name</label>
+          <input type="text" id="profile-name" placeholder="Enter your full name">
+        </div>
+        
+        <div class="form-group">
+          <label for="profile-email">Email Address</label>
+          <input type="email" id="profile-email" placeholder="your.email@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="profile-bio">Bio</label>
+          <textarea id="profile-bio" rows="4" placeholder="Tell us about yourself"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="profile-avatar">Profile Picture</label>
+          <input type="file" id="profile-avatar" accept="image/*">
+        </div>
+        
+        <button type="submit" class="btn-save">Save Changes</button>
+      </form>
+    </div>
+    
+    <div class="tab-content" id="account-tab">
+      <form class="settings-form">
+        <div class="form-group">
+          <label for="account-username">Username</label>
+          <input type="text" id="account-username" placeholder="Choose a username">
+        </div>
+        
+        <div class="form-group">
+          <label for="account-password">Change Password</label>
+          <input type="password" id="account-password" placeholder="Enter new password">
+        </div>
+        
+        <div class="form-group">
+          <label for="account-confirm-password">Confirm Password</label>
+          <input type="password" id="account-confirm-password" placeholder="Confirm new password">
+        </div>
+        
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="account-2fa"> Enable Two-Factor Authentication
+          </label>
+        </div>
+        
+        <div class="danger-zone">
+          <h3>Danger Zone</h3>
+          <p>Deleting your account is permanent and cannot be undone.</p>
+          <button type="button" class="btn-delete">Delete Account</button>
+        </div>
+      </form>
+    </div>
+    
+    <div class="tab-content" id="notifications-tab">
+      <form class="settings-form">
+        <h3>Email Notifications</h3>
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="notif-email-news" checked> Product updates and news
+          </label>
+        </div>
+        
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="notif-email-promo" checked> Promotions and special offers
+          </label>
+        </div>
+        
+        <h3>Push Notifications</h3>
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="notif-push-mentions" checked> Notify me when mentioned
+          </label>
+        </div>
+        
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="notif-push-messages" checked> New message alerts
+          </label>
+        </div>
+        
+        <div class="form-group">
+          <label for="notif-sound">Notification Sound</label>
+          <select id="notif-sound">
+            <option value="default">Default</option>
+            <option value="chime">Chime</option>
+            <option value="ding">Ding</option>
+            <option value="none">None</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn-save">Save Preferences</button>
+      </form>
+    </div>
+    
+    <div class="tab-content" id="team-tab">
+      <div class="team-management">
+        <div class="team-members">
+          <h3>Team Members</h3>
+          <div class="member-list">
+            <div class="member-card">
+              <img src="https://cdn-icons-png.flaticon.com/128/15427/15427945.png" alt="Member avatar" class="member-avatar">
+              <div class="member-info">
+                <span class="member-name">John Doe</span>
+                <span class="member-role">Admin</span>
+              </div>
+              <button class="btn-action">Edit</button>
+            </div>
+            
+            <div class="member-card">
+              <img src="https://cdn-icons-png.flaticon.com/128/2633/2633328.png" alt="Member avatar" class="member-avatar">
+              <div class="member-info">
+                <span class="member-name">Jane Smith</span>
+                <span class="member-role">Member</span>
+              </div>
+              <button class="btn-action">Edit</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="invite-member">
+          <h3>Invite New Member</h3>
+          <form class="invite-form">
+            <div class="form-group">
+              <label for="invite-email">Email Address</label>
+              <input type="email" id="invite-email" placeholder="Enter email to invite">
+            </div>
+            
+            <div class="form-group">
+              <label for="invite-role">Role</label>
+              <select id="invite-role">
+                <option value="member">Member</option>
+                <option value="admin">Admin</option>
+                <option value="viewer">Viewer</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="btn-invite">Send Invitation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    </main>
+
+    <!-- Right Sidebar - Recent Activity -->
+   <!-- Right Sidebar - Recent Activity -->
+<aside class="right-sidebar">
+  <div class="sidebar-header">
+    <h3>Activity Feed</h3>
+    <button class="sidebar-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6L6 18M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Notifications Section -->
+  <div class="sidebar-section">
+    <div class="section-header">
+      <h4>Notifications</h4>
+      <span class="badge">3 new</span>
+    </div>
+    <div class="notification-list">
+      <div class="notification-item unread">
+        <div class="notification-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </div>
+        <div class="notification-content">
+          <p><strong>New message</strong> from Sarah Williams</p>
+          <small>2 minutes ago</small>
+        </div>
+      </div>
+      <div class="notification-item">
+        <div class="notification-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+        </div>
+        <div class="notification-content">
+          <p><strong>System update</strong> scheduled for tonight</p>
+          <small>1 hour ago</small>
+        </div>
+      </div>
+      <div class="notification-item unread">
+        <div class="notification-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </div>
+        <div class="notification-content">
+          <p><strong>Missed call</strong> from client #12345</p>
+          <small>3 hours ago</small>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="view-all">View all notifications</a>
+  </div>
+
+  <!-- Recent Activity Section -->
+  <div class="sidebar-section">
+    <div class="section-header">
+      <h4>Recent Activity</h4>
+    </div>
+    <div class="activity-timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p>You updated the <strong>Project Dashboard</strong></p>
+          <small>Today, 10:45 AM</small>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p><strong>Alex Johnson</strong> commented on your post</p>
+          <small>Yesterday, 4:30 PM</small>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p>You shared <strong>Quarterly Report.pdf</strong> with the team</p>
+          <small>Yesterday, 11:20 AM</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions Section -->
+  <div class="sidebar-section">
+    <div class="section-header">
+      <h4>Quick Actions</h4>
+    </div>
+    <div class="quick-actions">
+      <button class="action-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+        </svg>
+        New Note
+      </button>
+      <button class="action-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Start Chat
+      </button>
+      <button class="action-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+        </svg>
+        New Task
+      </button>
+      <button class="action-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        New Project
+      </button>
+    </div>
+  </div>
+
+  <!-- Upcoming Events -->
+  <div class="sidebar-section">
+    <div class="section-header">
+      <h4>Upcoming Events</h4>
+    </div>
+    <div class="event-list">
+      <div class="event-item">
+        <div class="event-date">
+          <span class="day">15</span>
+          <span class="month">May</span>
+        </div>
+        <div class="event-details">
+          <h5>Team Standup Meeting</h5>
+          <p>10:00 AM - 10:30 AM</p>
+        </div>
+      </div>
+      <div class="event-item">
+        <div class="event-date">
+          <span class="day">17</span>
+          <span class="month">May</span>
+        </div>
+        <div class="event-details">
+          <h5>Client Presentation</h5>
+          <p>2:00 PM - 3:30 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+      <!-- ... (same as before) ... -->
+    </aside>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
